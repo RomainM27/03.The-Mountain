@@ -97,8 +97,8 @@
     );
 
     // perform array operation
-    $possible_hobbies_via_intersection = array_intersect($soulmate, $me);
-    $possible_hobbies_via_merge = array_merge($soulmate, $me);
+    $possible_hobbies_via_intersection = array_intersect($soulmate['hobbies'], $me['hobbies']);
+    $possible_hobbies_via_merge = array_merge($me,$soulmate);
 
     echo '<pre>';
     print_r($possible_hobbies_via_intersection);
@@ -107,8 +107,32 @@
 
 
 
-    ?>
+    $web_development = array(
+        'frontend' => [],
+        'backend' => [],
+    );
 
+    $web_development['frontend'][] ='xhtml' ;
+    $web_development['backend'][] = 'Ruby on Rails';
+    $web_development['frontend'][] ='CSS' ;
+    $web_development['backend'][] ='Flash' ;
+    $web_development['frontend'][] ='JavaScript' ;
+   
+    //$web_development['frontend'][] ='xhtml' ;
+    var_dump($web_development);
+
+
+    $pos = array_search('xhtml', $web_development['frontend']);
+    if ($pos !== FALSE)
+    {
+        $web_development['frontend'][$pos] = 'html';
+    }
+    var_dump($web_development);
+
+    array_splice($web_development['backend'],-1);
+
+    var_dump($web_development);
+    ?>
 
 
 
