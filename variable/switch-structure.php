@@ -58,6 +58,7 @@
                 : ($_GET['name'] == "unicorn" ? 2
                     : 3)));
     }
+    // $image = ($gender == 'human') ? $humanGif : (($gender == 'cat') ? $catGif : $unicornGif);
     echo $i;
     ?>
 
