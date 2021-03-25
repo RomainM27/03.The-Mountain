@@ -58,6 +58,16 @@
                 : ($_GET['name'] == "unicorn" ? 2
                     : 3)));
     }
+
+    //
+    // if (isset($_GET["breed"])) {
+
+    //     $gif = ($_GET["breed"] == "human") ? "<img src='https://media.giphy.com/media/8lN7K4PmqPIj7Ha7SA/giphy.gif' alt='gif' />" : 
+    //         (($_GET["breed"] == "cat") ? "<img src='https://media.giphy.com/media/GeimqsH0TLDt4tScGw/giphy.gif' alt='gif' />" : 
+    //         "<img src='https://media.giphy.com/media/21F1TuLSxWPAY/giphy.gif' alt='gif' />");
+
+    //         echo $gif;
+    // }
     // $image = ($gender == 'human') ? $humanGif : (($gender == 'cat') ? $catGif : $unicornGif);
     echo $i;
     ?>
