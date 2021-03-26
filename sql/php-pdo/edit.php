@@ -8,7 +8,7 @@ $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPT
 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
 ]);
 
-$test =  "Charleroi";
+
 $error = null; // gere le message d erreur
 $success = null;
 try{
