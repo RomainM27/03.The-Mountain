@@ -42,10 +42,16 @@ try{
                 <td><?= $rando->distance; ?></td>
                 <td><?= $rando->duration; ?></td>
                 <td><?= $rando->height_difference; ?></td>
+                <td>
+                <a href="./update.php?id=<?= $rando->id; ?>" class="btn btn-primary green-800">Modifier</a>
+                <a class='btn btn-danger' href="./delete.php?id=<?= $rando->id; ?>">Supprimer</a>
+                </td>
             </tr>
             <?php endforeach; ?>
             </tbody>
             </table>
+            <a href="./create.php" class="btn btn-success">Ajouter une rando</a> 
+            
         </div>
     </body>
 </html>
