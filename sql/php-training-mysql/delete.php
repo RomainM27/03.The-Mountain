@@ -15,6 +15,7 @@ if(isset($_GET['id'])){
         $error = $e->getMessage();
     }
     if(!($error)){
+
         header("Location: ./read.php");
     }else{
         echo $error;

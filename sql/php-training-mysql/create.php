@@ -1,4 +1,5 @@
 <?php
+
 require 'pdo.php';
 
 $error = null; 
