@@ -10,7 +10,19 @@ class Personnage // Présence du mot-clé class suivi du nom de la classe.
     private $_degats = 0;            // Ses dégâts, par défaut à 0.
 
 
-      // Nous déclarons une méthode dont le seul but est d'afficher un texte.
+
+    public function __construct($force, $degats) // Constructeur demandant 2 paramètres
+    {
+        echo 'Voici le constructeur !'; // Message s'affichant une fois que tout objet est créé.
+
+    //dans la construction ils sont bien appele avec les setteurs
+        $this->setForce($force); // Initialisation de la force.
+        $this->setDegats($degats); // Initialisation des dégâts.
+        $this->_experience = 1; // Initialisation de l'expérience à 1.
+    }
+
+
+    // Nous déclarons une méthode dont le seul but est d'afficher un texte.
     public function parler()
     {
         echo 'Je suis un personnage !';
@@ -91,15 +103,8 @@ class Personnage // Présence du mot-clé class suivi du nom de la classe.
     }
 }
 
-
-$perso1 = new Personnage; // Un premier personnage
-$perso2 = new Personnage; // Un second personnage
-
-$perso1->setForce(10);
-$perso1->setExperience(2);
-
-$perso2->setForce(90);
-$perso2->setExperience(58);
+$perso1 = new Personnage(20,10); // Un premier personnage
+$perso2 = new Personnage(50,10); // Un second personnage
 
 $perso1->frapper($perso2);  // $perso1 frappe $perso2
 $perso1->gagnerExperience(); // $perso1 gagne de l'expérience
