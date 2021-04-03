@@ -19,27 +19,55 @@ HTML;
         return $input;
     }
 
-    public function checkbox(string $title, array $check)
+    public function check(string $type, string $title, array $check)
     {
-        foreach ($check as $check) {
-            $input += "<div class='form-check'><input type='checkbox' name=$check id=$check  class='form-control'> <label for=$check class='form-label'>$check</label> </div>";
+        $input = "";
+
+        $input = "<div class='col-12 col-md-7 my-2'>";
+        $input .= "<p>$title :</p>";
+        if ($type == "checkbox") {
+            foreach ($check as $check) {
+                $input .= "<div class='form-check'><input type=$type name=$check value=$check class='form-check-input'> <label for=$check class='form-check-label'>$check</label> </div>";
+            }
+        } else {
+            foreach ($check as $check) {
+                $input .= "<div class='form-check'><input type=$type name='radio' value=$check class='form-check-input'> <label for=$check class='form-check-label'>$check</label> </div>";
+            }
         }
+        $input .= "</div>";
+        return $input;
     }
 
-    public function radio()
+    public function textarea(string $id)
     {
+        $input = "";
+        $input = <<<HTML
+        <div class="mb-3">
+            <label for=$id class="form-label">$id :</label>
+            <textarea class="form-control" id=$id name=$id ></textarea>
+        
+        </div>
+HTML;
+        return $input;
     }
 
-    public function textarea()
+    public function select(string $title, array $option)
     {
-    }
 
-    public function select()
-    {
+        $input = "";
+        $input .= "<p>$title :</p>";
+        $input .= "<select class='form-select'>
+        <option selected>Choose one...</option>";
+        foreach ($option as $option) {
+            $input .= "<option value=$option>$option</option>";
+        }
+        $input .= "</select>";
+        return $input;
     }
 
     public function button()
     {
+        return "<button class='btn btn-primary' type='submit'>Submit form</button>";
     }
 
     public function end()

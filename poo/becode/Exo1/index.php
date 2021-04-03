@@ -5,6 +5,9 @@ function chargerClasse($classe)
 }
 
 spl_autoload_register('chargerClasse');
+
+$check = array("vanille", "chocolat", "fraise");
+$option = array("vanille", "chocolat", "fraise");
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +30,11 @@ spl_autoload_register('chargerClasse');
         echo $form->start("post", "test.php");
         echo $form->basic_input("text", "name");
         echo $form->basic_input("text", "lastname");
+        echo $form->check("checkbox", "Choissisez un gout", $check);
+        echo $form->select("Choose one plz", $option);
+        echo $form->check("radio", "Choissisez un gout", $check);
+        echo $form->textarea("msg");
+        echo $form->button("msg");
         echo $form->end();
         ?>
     </div>
