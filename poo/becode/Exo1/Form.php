@@ -42,7 +42,7 @@ HTML;
     {
         $input = "";
         $input = <<<HTML
-        <div class="mb-3">
+        <div class="col-12 col-md-7 my-2">
             <label for=$id class="form-label">$id :</label>
             <textarea class="form-control" id=$id name=$id ></textarea>
         
@@ -55,19 +55,20 @@ HTML;
     {
 
         $input = "";
+        $input .= "<div class='col-12 col-md-7 my-2'>";
         $input .= "<p>$title :</p>";
         $input .= "<select class='form-select'>
         <option selected>Choose one...</option>";
         foreach ($option as $option) {
             $input .= "<option value=$option>$option</option>";
         }
-        $input .= "</select>";
+        $input .= "</select> </div>";
         return $input;
     }
 
     public function button()
     {
-        return "<button class='btn btn-primary' type='submit'>Submit form</button>";
+        return "<div class='col-12 col-md-7 my-2'> <button class='btn btn-primary' type='submit'>Submit form</button>  </div>";
     }
 
     public function end()
