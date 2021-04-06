@@ -66,11 +66,11 @@ abstract class Personnage
 
     public function recevoirDegats()
     {
-        $this->_degats += 5;
+        $this->degats += 5;
         // On augmente de 5 les dégâts.
 
 
-        if ($this->_degats >= 100) {
+        if ($this->degats >= 100) {
             return self::PERSONNAGE_TUE;
         }
         // Si on a 100 de dégâts ou plus, la méthode renverra une valeur signifiant que le personnage a été tué.
