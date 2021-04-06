@@ -39,6 +39,17 @@ class Voiture
     }
 
     // METHOD //
+    public function rouler($kmParcouru)
+    {
+        if ($this->usure == "hight") {
+            echo "La voiture est trop usée";
+            return;
+        } else {
+            $newKm = $this->km + $kmParcouru;
+            $this->setKm($newKm);
+            echo "La voiture a parcouru $kmParcouru, elle est mtn a $this->km";
+        }
+    }
     public function display()
     {
         echo "<tr>" . $this->td($this->img) . $this->td($this->ima) . $this->td($this->pays) . $this->td($this->modele) . $this->td($this->marque) . $this->td($this->utilitaire) . $this->td($this->couleur) . $this->td($this->poid) . $this->td($this->km) . $this->td($this->usure) . $this->td($this->free) . $this->td($this->dateInit) . $this->td($this->dateNow) . "</tr>";
@@ -313,6 +324,6 @@ class Voiture
      */
     public function setImg($img)
     {
-        (!empty($img)) ? $this->img = "<img scr='.base_url.''img/$img' alt='Une voiture'>" : $this->img = "Not Found";
+        (!empty($img)) ? $this->img = "<img src='img/$img' alt='Une voiture' width='150px'>" : $this->img = "Not Found";
     }
 }

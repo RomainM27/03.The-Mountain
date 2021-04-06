@@ -77,6 +77,9 @@ $voit5 = new Voiture($voiture5);
 <body class="container">
     <h1 class="my-5">Les voitures</h1>
     <table class="table">
+        <?php $voit2->rouler(20);
+        //$voit2->rouler(190);
+        ?>
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -95,7 +98,8 @@ $voit5 = new Voiture($voiture5);
             </tr>
         </thead>
         <tbody>
-            <?php $voit1->test();
+            <?php
+            $voit1->test();
             $voit1->display();
             $voit2->display();
             $voit3->display();
