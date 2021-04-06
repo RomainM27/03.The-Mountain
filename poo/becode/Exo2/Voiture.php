@@ -3,6 +3,7 @@
 class Voiture
 {
     protected $ima,
+        $img,
         $dateInit,
         $km,
         $modele,
@@ -38,10 +39,20 @@ class Voiture
     }
 
     // METHOD //
+    public function display()
+    {
+        echo "<tr>" . $this->td($this->img) . $this->td($this->ima) . $this->td($this->pays) . $this->td($this->modele) . $this->td($this->marque) . $this->td($this->utilitaire) . $this->td($this->couleur) . $this->td($this->poid) . $this->td($this->km) . $this->td($this->usure) . $this->td($this->free) . $this->td($this->dateInit) . $this->td($this->dateNow) . "</tr>";
+    }
+    public function td($element)
+    {
+        return "<td> $element</td>";
+    }
+
     public function test()
     {
         echo $this->ima . "<br>";
         echo $this->dateInit . "<br>";
+        echo $this->dateNow . " age voiture<br>";
         echo $this->km . "<br>";
         echo $this->modele . "<br>";
         echo $this->couleur . "<br>";
@@ -161,6 +172,7 @@ class Voiture
     public function setDateInit($dateInit)
     {
         $this->dateInit = $dateInit;
+        $this->setDateNow($dateInit);
     }
 
     /**
@@ -259,7 +271,10 @@ class Voiture
      */
     public function setDateNow($dateNow)
     {
-        $this->dateNow = $dateNow;
+        $dateInit = $dateNow;
+        $aujourdhui = date("Y-m-d");
+        $diff = date_diff(date_create($dateInit), date_create($aujourdhui));
+        $this->dateNow = $diff->format('%y');
     }
 
     /**
@@ -281,5 +296,23 @@ class Voiture
         if ($letters == "be") $this->pays = self::PAYS_BELGIQUE;
         if ($letters == "fr") $this->pays = self::PAYS_FRANCE;
         if ($letters == "de") $this->pays = self::PAYS_ALLEMAGNE;
+    }
+
+    /**
+     * Get the value of img
+     */
+    public function getImg()
+    {
+        return "$this->img";
+    }
+
+    /**
+     * Set the value of img
+     *
+     * @return  self
+     */
+    public function setImg($img)
+    {
+        (!empty($img)) ? $this->img = "<img scr='.base_url.''img/$img' alt='Une voiture'>" : $this->img = "Not Found";
     }
 }

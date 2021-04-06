@@ -30,6 +30,8 @@ $option = array("vanille", "chocolat", "fraise");
         echo $form->start("post", "test.php");
         echo $form->basic_input("text", "name");
         echo $form->basic_input("text", "lastname");
+        echo $form->basic_input("number", "testid", "id");
+        echo $form->basic_input("password", "psw");
         echo $form->check("checkbox", "Choissisez un gout", $check);
         echo $form->select("Choose one plz", $option);
         echo $form->check("radio", "Choissisez un gout", $check);
