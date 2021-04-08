@@ -29,13 +29,18 @@ function getComments($postId)
     return $comments;
 }
 
+function postComment($postId, $author, $comment)
+{
+    $db = dbConnect();
+
+    $postComments = $db->prepare('INSERT INTO `comments`( `post_id`, `author`, `comment`, `comment_date`) VALUES (?,?,?,NOW())');
+    $affectedLines = $postComments->execute(array($postId, $author, $comment));
+    return $affectedLines;
+}
+
 // Nouvelle fonction qui nous permet d'éviter de répéter du code
 function dbConnect()
 {
-    try {
-        $db = new PDO('mysql:host=localhost;dbname=openclassroom;charset=utf8', 'root', 'root27');
-        return $db;
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
+    $db = new PDO('mysql:host=localhost;dbname=openclassroom;charset=utf8', 'root', 'root27');
+    return $db;
 }
