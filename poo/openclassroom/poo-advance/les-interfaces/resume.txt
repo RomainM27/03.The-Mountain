@@ -1,0 +1,4 @@
+https://www.php.net/manual/en/class.arrayiterator.php#class.arrayiterator
+
+
+La class qui est deja defini dans php et resume les interfaces audessus
