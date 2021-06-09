@@ -1,0 +1,12 @@
+{
+  "name": "mrsays/test",
+  "authors": [
+    {
+      "name": "RomainM27",
+      "email": "70415526+RomainM27@users.noreply.github.com"
+    }
+  ],
+  "require": {
+    "altorouter/altorouter": "^2.0"
+  }
+}

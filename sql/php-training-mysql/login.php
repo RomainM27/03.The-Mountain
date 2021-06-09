@@ -6,9 +6,6 @@ $error = null;
 var_dump($_POST);
 try {
 
-
-
-
     if (isset($_POST["button"])) {
         var_dump($_POST);
         $login = $_POST['login'];
